@@ -14,6 +14,8 @@ export class ServersComponent implements OnInit {
   serverName= 'testserver';
   userName =' ';
   password='';
+  showSecret=false;
+  log=[];
 
   constructor() { 
     setTimeout(()=>{
@@ -33,4 +35,9 @@ export class ServersComponent implements OnInit {
   }
 
   
+  onToggleDetails(){
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1);
+  }
+
 }
