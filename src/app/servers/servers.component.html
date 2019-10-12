@@ -25,11 +25,16 @@ class="form-control">
 class="btn btn-primary" [disabled]="username === ' ' && password===' ' "
 (click)="username = ' '" > Submit </button>
 
-<button 
-<!-- class ="btn btn-primary" (click)="showSecret=!showSecret"> Display Details</button> -->
+<!-- <button 
+ class ="btn btn-primary" (click)="showSecret=!showSecret"> Display Details</button>  -->
+ <button
 class ="btn btn-primary" (click)="onToggleDetails()"> Display Details</button>
 <p *ngIf="showSecret">Secrest Password = tuna</p>
-<div *ngFor="let logItem of log">{{logItem}}</div>
+<div 
+*ngFor="let logItem of log"
+    [ngStyle]="backgroundColor: logItem >=5 ? 'blue' : 'transparent'}" 
+    >{{logItem}}
+</div>
 <!-- <p>{{serverCreationStatus}}</p> -->
 
 <app-server></app-server>
